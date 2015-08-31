@@ -1,0 +1,738 @@
+@import "compass/css3"  
+// @import "compass"
+ 
+/* COLORES */ 
+$darckpurpure: #5a2282
+$darcksalmon: #a01533
+$darckgreen: #5a7c1a
+$darckblue2: #0d7070
+$color-text: #636363
+$light-grey: #b7b7b7
+$darckblue: #00c0ed 
+$bluesky:  #05c6e5
+$purpure: #7c30a0
+$salmon: #db233a
+$orange: #DD5B22
+$white: #ffffff
+$green: #6c9925
+$grey: #969696
+$blue: #108c99
+/*FONTS*/
+@include font-face("asapregular", font-files( "../font/asap-regular.woff", "../font/asap-regular.ttf" ), "../font/asap-regular.eot")
+@include font-face("asaplight", font-files( "../font/asap-light.woff", "../font/asap-light.ttf" ), "../font/asap-light.eot")
+@include font-face("asapbold", font-files( "../font/asap-bold.woff", "../font/asap-bold.ttf" ), "../font/asap-bold.eot")
+@include font-face("robotolihgt", font-files( "../font/roboto-light.woff", "../font/roboto-light.ttf" ), "../font/roboto-light.eot")
+@include font-face("robotoregular", font-files( "../font/roboto-regular.woff", "../font/roboto-regular.ttf" ), "../font/roboto-regular.eot")
+
+// @include font-face("robotothin", font-files( "../font/roboto-thin.woff", "../font/roboto-thin.ttf" ), "../font/roboto-thin.eot")
+
+/*MIXIN*/
+// @mixin shadow($background, $left)
+//     background: $background
+//     position: absolute
+//     bottom: -5px
+//     height: 5px
+//     content: ''
+//     width: 20%
+//     left: $left 
+/* GENERAL ELEMENTS */
+*
+    +transition-duration(250ms)
+    &:focus
+        @include box-shadow(none !important)
+        text-decoration: none !important
+        // border-color: $grey !important
+        background: none !important
+    a
+        text-decoration: none !important
+
+h1
+    font-size: 62px
+h2
+    font-size: 47px
+h3
+    font-size: 40px
+h4
+    font-size: 28px 
+h5
+    font-size: 22px
+h6
+    font-size: 18px
+p
+    font-size: 16px
+
+/* CLASSES */
+.full-weidth
+    width: 100%
+.container
+    width: 1024px 
+body
+//     overflow: hidden
+// .GDT0S1WBCS
+//     position: relative
+//     > div
+//         &:first-of-type
+//             width: 100% !important
+*
+    font-family: "asapregular"
+
+// HEADER
+.cont-nav-header
+    background: $bluesky
+    height: 105px
+    .cont-elemt
+        padding-top: 27px
+    .cont-buttom
+        h4
+            font-family: "asapregular"
+            padding-left: 20px
+            color: $white
+            float: right
+    .cont-list
+        .menu-movil
+            float: right
+            li
+                padding-right: 20px
+                a
+                    font-family: "asapregular"
+                    font-size: 15px
+                    color: $white 
+                    &:hover
+                        // border-bottom: solid 2px $white
+                        color: $darckblue2
+        .desplegable-cat
+            .dropdown-menu
+                padding: 0px
+                margin-top: 27px
+                @include border-radius(0 0 5px 5px)
+                @include box-shadow(0 2px 5px rgba(0, 0, 0, .175))
+                @include box-shadow(inset 0px -5px 0px 0px $bluesky)
+                &:before
+                    border-bottom: 10px solid $white
+                    border-right: 10px solid transparent
+                    border-left: 10px solid transparent
+                    position: absolute
+                    right: 120px
+                    content: ""
+                    top: -10px
+                li
+                    border-bottom: solid 1px $grey
+                    padding: 5px 0 5px 0
+                    padding-right: 0px
+                    &:last-child
+                        border-bottom: 0px
+                    a
+                        color: $color-text !important
+                        &:hover
+                            background: none !important
+
+                    &:hover
+                        background: rgba(42,186,211,0.56)
+                        a
+                            color: $white !important
+            img
+                margin-left: 10px !important
+
+            &.open
+                .desplagable
+                    background: $bluesky !important
+                    img
+                        +rotate(180deg)
+/*CONTENT-SLIDER*/
+.image
+    background-image: url(../img/slide2.png)
+    background-repeat: no-repeat
+    background-position: center
+    position: relative
+    height: 680px
+    &:after
+        background: $purpure
+        position: absolute
+        height: 100px
+        bottom: -100px
+        content: ""
+        z-index: 0
+        width: 50%
+        left: 0
+    &:before 
+        background: $salmon
+        position: absolute
+        height: 100px
+        bottom: -100px
+        content: ""
+        z-index: 0
+        width: 50%
+        right: 0
+    .text-slide
+        position: relative
+        .transfor-skew
+            @include background-image(linear-gradient(left, rgba(147,39,143,0.8) 0%,rgba(241,90,36,0.8) 100%))
+            -webkit-transform: skew(20deg)
+            position: absolute
+            border-radius: 6px
+            height: 200px
+            width: 500px
+            top: 200px
+            left: 0
+        .text-promo
+            position: absolute
+            padding: 20px  
+            color: $white
+            width: 500px
+            top: 200px
+            left: 30px
+            h3
+                margin: 0px            
+            h1
+                margin: 0px
+            h2
+                margin: 0px
+/* NAV-DIRECT*/
+.direct-nav
+    position: relative
+    z-index: 1
+    .cont-elemt
+        width: 100%
+        ul
+            li
+                height: 100px
+                float: left
+                width: 25%
+                a
+                    display: table
+                    color: $white
+                    height: 100%
+                    width: 100%
+                    float: left
+                    .cont-img-text
+                        vertical-align: middle
+                        display: table-cell
+                        text-align: center
+                        img
+                            padding-left: 15px
+                        h6
+                            display: inline-block
+                            padding: 7px 8px
+
+            .purpure
+                background: $purpure
+                &:hover
+                    @include box-shadow(inset 0 -7px 0 0 $darckpurpure)
+            .blue
+                background: $blue
+                &:hover
+                    @include box-shadow(inset 0 -7px 0 0 $darckblue2)
+            .green
+                background: $green
+                &:hover
+                    @include box-shadow(inset 0 -7px 0 0 $darckgreen)
+            .salmon
+                background: $salmon
+                &:hover
+                    @include box-shadow(inset 0 -7px 0 0 $darcksalmon)
+/*SLIDER*/
+.border-purpure
+    border-bottom: solid 3px $purpure
+.slide-cont
+    .info-slide
+        width: 50%
+    .cont-left
+        height: 200px 
+        h5
+            padding: 21px 0 0 14px
+            padding-left: 15px
+            color: $darckblue2
+            text-align: center
+            width: 100%
+            float: left
+        .img-parrafo
+            padding-left: 20px
+            margin: 0 auto
+            float: left
+            width: 100%
+            a
+                float: left
+                img
+                    float: left
+                    border-radius: 50%
+                p
+                    padding: 21px 0 0 15px
+                    color: $color-text
+                    max-width: 300px
+                    text-align: left
+                    width: 300px
+                    float: left
+.control-gen
+    background: none !important
+    // position: relative !important
+    .icon-arrow
+        position: absolute
+        left: -30px
+        top: 45%
+    .icon-arrow-right
+        position: absolute
+        right: -30px
+        top: 45%
+/*SLIDER DOS-SECCIONES*/
+.cont-slide2
+    margin: 50px 0 0 0
+    .cont-slide2-text
+        font-family: "robotolihgt"
+        background: $bluesky
+        padding: 50px 15px
+        height: 600px
+        color: $white
+        h2
+            margin: 0
+        h1
+            margin: 0
+            // background: blue
+            &:nth-child(+2)
+                font-size: 133px
+            &:nth-child(+3)
+                font-size: 142px
+            &:last-child
+                // background: red !important
+                font-size: 103px
+    .section-2
+        background: $salmon
+/* EVENTOS-SECTION */
+.full-color
+    background: $purpure 
+    .cont-info-event
+        display: table
+        height: 100%
+        .info-event
+            text-align: center
+            color: $white
+            // float: left
+            width: 35%
+            display: table-cell
+            vertical-align: middle
+            h1
+                font-family: "robotolihgt"
+        img
+            float: right
+        .bottom
+            padding-top: 25px
+            .bottom-more
+                font-family: "asapregular"
+                border: solid 1px $white
+                background: none
+                font-size: 18px
+                &:hover
+                    background: $white
+                    color: $purpure
+/* OUR-CLIENTS*/ 
+.our-clients
+    h4
+        text-align: center
+        color: $bluesky
+        padding: 50px 0
+    ul
+        li
+            // margin-left: 40px
+            text-align: center
+            padding: 25px 10px
+            // width: 30%
+            // float: left
+            border: solid 1px $grey
+            &:nth-child(1n+4)
+                margin-top: 50px
+            &:nth-child(3n+1)
+                margin-left: 40px
+
+            img
+                @include background-image(linear-gradient(left, rgba(147,39,143,0.7) 0%,rgba(241,90,36,0.7) 100%))
+                border-radius: 50%
+                padding: 4px
+            p
+                color: color-text 
+                padding-top: 15px
+                position: relative
+                &:before
+                    background-image: url(../img/comillas.png)
+                    background-repeat: no-repeat
+                    position: absolute
+                    +rotate(180deg)
+                    opacity: 0.6
+                    height: 22px
+                    width: 25px
+                    content: ""
+                    right: 0
+                    top: 0
+                &:after
+                    background-image: url(../img/comillas.png)
+                    background-repeat: no-repeat
+                    position: absolute
+                    height: 22px
+                    opacity: 0.6
+                    width: 25px
+                    content: ""
+                    left: 0
+                    top: 0
+
+/*BOTTOM-NAV*/
+.full-color-2
+    position: relative
+    margin: 50px 0
+    &:before
+        @include background-image(linear-gradient(left, rgba(147,39,143,1) 0%,rgba(41,171,226,1) 100%))
+        position: absolute
+        height: 100%
+        opacity: 0.9
+        content: ""
+        width: 100%
+        left: 0
+        top: 0
+    &:after
+        @include background-image(linear-gradient(left, rgba(147,39,143,1) 0%,rgba(241,90,36,1) 100%))
+        position: absolute
+        opacity: 0.9
+        height: 100%
+        width: 100%
+        content: ""
+        left: 0
+        top: 0
+    .bottom-nav
+        position: relative
+        margin: 0px
+        width: 100%
+        z-index: 2
+        li
+            text-align: center
+            padding: 50px 0
+            float: left
+            width: 25%
+            a
+                display: block
+                color: $white
+                height: 100%
+                width: 100%
+                h6
+                    padding-top: 10px
+
+/*PAG-CATEGORY*/
+.category
+    padding: 50px 0
+    .cont-row
+        margin: 0 20px
+        .cont-left
+            // background: aqua
+            padding: 0
+            // padding: 20px 0
+            .nav-category
+                width: 100%
+                border: solid 1px $grey
+                li
+                    border-right: solid 1px $grey
+                    text-align: center
+                    position: relative
+                    float: left
+                    width: 25%
+                    &:last-child
+                        border: none
+                    a
+                        padding: 10px 10px
+                        position: relative
+                        .arreglos
+                            top: 16px
+                        svg
+                            vertical-align: middle
+                            // position: absolute
+                            width: 40px
+                        h6
+                            display: inline-block
+                            color: $color-text
+                            padding-right: 20px
+                            // width: 85px
+                        &:hover
+                            background: none !important
+                            h6
+                                color: $white
+                            svg
+                                path
+                                    fill: $white !important
+                    &.active
+                        &:before
+                            border-right: 10px solid transparent
+                            border-left: 10px solid transparent
+                            border-bottom: 10px solid $white
+                            position: absolute
+                            +rotate(361deg)
+                            right: 45%
+                            content: ""
+                            bottom: -1px
+                        h6
+                            color: $white
+                        svg
+                            path
+                                fill: $white !important
+                                // background: red
+
+                    &:nth-child(0n+1)
+                        &:hover
+                            background: $purpure
+                        &.active
+                            background: $purpure
+                    &:nth-child(0n+2)
+                        &:hover
+                            background: $blue
+                        &.active
+                            background: $blue
+                    &:nth-child(0n+3)
+                        &:hover
+                            background: $green
+                        &.active
+                            background: $green
+
+                    &:nth-child(0n+4)
+                        &:hover
+                            background: $salmon
+                        &.active
+                            background: $salmon
+        .cont-right
+            // background: yellowgreen
+            // padding-left: 50px
+            // float: left
+            .tab-content
+                .section-event
+                    // text-align: center
+                    color: $color-text
+                    h3
+                    p
+                        margin: 0 auto
+                        width: 80%
+                .cont-nav-event
+                    padding-top: 50px
+                    ul
+                        margin-bottom: 30px
+                        border: 0px
+                        li
+                            text-align: center
+                            width: 25%
+                            &.active
+                                a
+                                    @include box-shadow(inset 0px -3px 0px 0px $purpure !important)
+                                    // border: 0px
+                            a
+                                border: 0px !important
+                                padding-bottom: 5px
+                                font-size: 20px
+                                color: $purpure
+                                &:hover
+                                    @include box-shadow(inset 0px -3px 0px 0px $purpure !important)
+                                    border: 0px $white !important
+                                    background: none
+                    .bottom-info
+                        text-align: center
+                        margin-top: 50px
+                        .bottom-more-info
+                            border: solid 1px $purpure
+                            background: none
+                            font-size: 20px
+                            color: $purpure
+                            &:hover
+                                color: $white 
+                                background: $purpure 
+                    .item-event
+                        height:  400px
+/*LIST-PRODUCT*/
+.cont-product
+    .list-product
+        background: yellowgreen
+        margin: 0 
+        li
+            border-right: solid 1px $light-grey
+            border-bottom: solid 1px $light-grey
+            padding: 80px 0 15px 0
+            text-align: center
+            position: relative
+            overflow: hidden
+            height: 460px
+            width: 33.3%
+            float: left
+            &:nth-child(3n+3)
+                border-right: none
+            .price-product
+                position: absolute
+                width: 100%
+                bottom: 5px
+                h6
+                    margin: 10px 0 5px 0
+                    &:first-child
+                        font-weight: 600
+            .shop-detail
+                background-color: $blue
+                position: absolute
+                bottom: 70px
+                opacity: 0.8
+                width: 100%
+                left: 310px
+                a
+                    padding: 8px 0 0 0
+                    color: $white
+                    float: left
+                    width: 50%
+                    &:last-child
+                        border-left: 1px solid $white
+            &:hover
+                .shop-detail
+                    left: 0px
+            &.agotado
+
+                .price-product
+                    h6
+                        &:last-child
+                            color: $orange
+                            font-weight: 600
+/*DETAIL-PRODUCT*/
+.cont-detail
+    padding: 80px 0
+
+    .detail-img
+        width: 50%
+        img
+            width: 450px
+    .info-detail
+        background-color: $bluesky
+        font-family: "robotolihgt"
+        margin-top: 10%
+        color: $white
+        width: 50%
+        .descript 
+            border-top: solid 1px $white
+            font-family: "robotolihgt"
+            padding: 5px 15px
+            h2
+                text-align: center
+            h5
+                span
+                    font-family: "robotoregular"
+                    float: right
+
+            &:first-child
+                border: none !important
+    .bottom-detail
+        background-color: $salmon
+        border-top: 4px solid $white
+        .bottom-shop
+            background-color: transparent
+            font-family: "robotolihgt"
+            text-align: center
+            font-size: 23px
+            padding: 10px 
+            border: none
+            width: 100%
+            &:hover
+                background-color: $darcksalmon
+
+    
+
+
+    
+
+/*  FOOTER: */
+footer
+    background: $purpure
+    color: $white
+    @include box-shadow(inset -490px 0px 0px 0px $darckblue)
+    .footer-text
+        font-family: "robotolihgt" 
+        display: inline-block
+    .footer-left
+        width: 50%
+        padding: 20px 
+        .footer-text-left-right
+            font-family: "robotolihgt"
+        .footer-text-left
+            padding: 15px 15px 0 0
+            h4
+                margin: 0px
+            h1
+                margin: 0px
+        .footer-text-right
+            border-left: solid 1px $white
+            padding-left: 15px
+            h1
+                margin: 0px
+            h3
+                margin: 0px
+    .footer-right
+        background: $darckblue
+        padding: 20px
+        width: 50%
+        position: relative
+        // &:after
+        //     content: ""
+        //     position: absolute
+        //     right: 0
+        //     width: 100px
+        //     height: 100%
+        //     background: red
+        //     top: 0
+
+    /* MEDIA QUERIES */
+
+@media (min-width: 1200px)
+    .container
+        width: 960px
+@media (max-width: 991px)
+    .container
+        width: 100%
+    .cont-list
+        .menu-movil
+            // float: none !important
+            li
+                padding-right: 0px !important
+    /* OUR CLIENTS*/
+    .our-clients
+        ul
+            li
+                margin-left: 0px !important
+
+@media (max-width: 767px) 
+    .cont-nav-header
+        height: auto !important
+        padding-bottom: 20px
+        .cont-buttom
+            a
+                float: left
+                h4
+                    font-size: 25px
+
+            .buttom-movil
+                background: $white
+                span
+                    background: $bluesky
+        ul
+            width: 100%
+        .cont-list
+            // width: 100%
+            margin-top: 20px
+            li
+                // border-bottom: solid
+            .menu-movil
+                float: none !important
+            .desplegable-cat
+                .dropdown-menu
+                    @include box-shadow(0 0px 0px rgba(0, 0, 0, .175))
+                    margin-top: 0px
+                    &:before
+                        display: none
+                    li
+                        border-bottom: 0px
+                        padding: 0px 
+                        a
+                            color: $white !important
+@media (max-width: 370px)
+    .cont-nav-header
+        .cont-buttom
+            .buttom-movil
+                margin-top: 25px
+            a
+                text-align: center
+                width: 210px
+                h4
+                    width: 100%
+                    padding-left: 0px
