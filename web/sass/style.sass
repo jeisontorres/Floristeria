@@ -1,4 +1,4 @@
-@import "compass/css3"  
+@import "compass/css3"   
 // @import "compass"
  
 /* COLORES */ 
@@ -10,20 +10,29 @@ $color-text: #636363
 $light-grey: #b7b7b7
 $darckblue: #00c0ed 
 $bluesky:  #05c6e5
-$purpure: #7c30a0
+$purpure: #9A1D78
 $salmon: #db233a
 $orange: #DD5B22
 $white: #ffffff
 $green: #6c9925
 $grey: #969696
 $blue: #108c99
+
+$new-salmon: #DE4D63
+
 /*FONTS*/
 @include font-face("asapregular", font-files( "../font/asap-regular.woff", "../font/asap-regular.ttf" ), "../font/asap-regular.eot")
 @include font-face("asaplight", font-files( "../font/asap-light.woff", "../font/asap-light.ttf" ), "../font/asap-light.eot")
 @include font-face("asapbold", font-files( "../font/asap-bold.woff", "../font/asap-bold.ttf" ), "../font/asap-bold.eot")
+
 @include font-face("robotolihgt", font-files( "../font/roboto-light.woff", "../font/roboto-light.ttf" ), "../font/roboto-light.eot")
 @include font-face("robotoregular", font-files( "../font/roboto-regular.woff", "../font/roboto-regular.ttf" ), "../font/roboto-regular.eot")
 
+@include font-face("harabara", font-files( "../font/harabara.woff", "../font/harabara.ttf" ), "../font/harabara.eot")
+
+@include font-face("opensans-regular", font-files( "../font/opensans/opensans-regular.woff", "../font/opensans/opensans-regular.ttf" ), "../font/opensans/opensans-regular.eot")
+@include font-face("opensans-bold", font-files( "../font/opensans/opensans-bold.woff", "../font/opensans/opensans-bold.ttf" ), "../font/opensans/opensans-bold.eot")
+@include font-face("opensans-light", font-files( "../font/opensans/opensans-light.woff", "../font/opensans/opensans-light.ttf" ), "../font/opensans/opensans-light.eot")
 // @include font-face("robotothin", font-files( "../font/roboto-thin.woff", "../font/roboto-thin.ttf" ), "../font/roboto-thin.eot")
 
 /*MIXIN*/
@@ -74,39 +83,57 @@ body
 //         &:first-of-type
 //             width: 100% !important
 *
-    font-family: "asapregular"
+    font-family: "robotoregular"
+
+header
+    position: fixed
+    z-index: 999
+    width: 100%
 
 // HEADER
 .cont-nav-header
-    background: $bluesky
-    height: 105px
+    @include box-shadow(0 2px 5px rgba(0, 0, 0, .175))
+    position: relative
+    background: white
+    z-index: 9999
+    height: 100%
     .cont-elemt
-        padding-top: 27px
+        // padding-top: 15px
+        height: 80px
     .cont-buttom
+        padding: 15px
         h4
-            font-family: "asapregular"
+            font-family: "harabara"
             padding-left: 20px
-            color: $white
+            color: $new-salmon
             float: right
     .cont-list
         .menu-movil
             float: right
             li
-                padding-right: 20px
+                // padding-right: 15px
+                // height: 80px
                 a
-                    font-family: "asapregular"
-                    font-size: 15px
-                    color: $white 
+                    // font-family: "robotoregular"
+                    font-size: 16px
+                    color: $new-salmon 
+                    padding: 30px 15px
+                    // height: 100%
                     &:hover
                         // border-bottom: solid 2px $white
-                        color: $darckblue2
+                        color: white
+                        background: $new-salmon
+                &.active
+                    a
+                        background: $new-salmon
+                        color: white
         .desplegable-cat
             .dropdown-menu
                 padding: 0px
-                margin-top: 27px
+                margin-top: -1px
                 @include border-radius(0 0 5px 5px)
                 @include box-shadow(0 2px 5px rgba(0, 0, 0, .175))
-                @include box-shadow(inset 0px -5px 0px 0px $bluesky)
+                @include box-shadow(inset 0px -5px 0px 0px $new-salmon)
                 &:before
                     border-bottom: 10px solid $white
                     border-right: 10px solid transparent
@@ -123,19 +150,23 @@ body
                         border-bottom: 0px
                     a
                         color: $color-text !important
+                        padding: 10px !important
                         &:hover
                             background: none !important
 
                     &:hover
-                        background: rgba(42,186,211,0.56)
+                        // background: rgba(42,186,211,0.56)
+                        background: $new-salmon
                         a
                             color: $white !important
             img
                 margin-left: 10px !important
 
             &.open
+                a
+                    color: white
                 .desplagable
-                    background: $bluesky !important
+                    background: $new-salmon !important
                     img
                         +rotate(180deg)
 /*CONTENT-SLIDER*/
@@ -145,19 +176,20 @@ body
     background-position: center
     position: relative
     height: 680px
+    @include box-shadow(inset 0 -2px 0 0 $purpure)
     &:after
         background: $purpure
         position: absolute
-        height: 100px
+        height: 8px
         bottom: -100px
         content: ""
         z-index: 0
         width: 50%
         left: 0
     &:before 
-        background: $salmon
+        background: $new-salmon
         position: absolute
-        height: 100px
+        height: 8px
         bottom: -100px
         content: ""
         z-index: 0
@@ -166,25 +198,26 @@ body
     .text-slide
         position: relative
         .transfor-skew
-            @include background-image(linear-gradient(left, rgba(147,39,143,0.8) 0%,rgba(241,90,36,0.8) 100%))
-            -webkit-transform: skew(20deg)
+            background-image: url(../img/petalo-fondo.png)
             position: absolute
-            border-radius: 6px
-            height: 200px
-            width: 500px
+            height: 247px
+            width: 397px
             top: 200px
             left: 0
+
         .text-promo
             position: absolute
             padding: 20px  
             color: $white
             width: 500px
-            top: 200px
-            left: 30px
+            top: 220px
+            left: 82px
             h3
-                margin: 0px            
+                margin: 0px    
+                font-size: 39px         
             h1
                 margin: 0px
+                font-size: 52px 
             h2
                 margin: 0px
 /* NAV-DIRECT*/
@@ -215,21 +248,28 @@ body
                             padding: 7px 8px
 
             .purpure
-                background: $purpure
+                // background: $purpure
+                border-right: solid 1px $purpure 
+                @include box-shadow(inset 0 -8px 0 0 $purpure)
                 &:hover
-                    @include box-shadow(inset 0 -7px 0 0 $darckpurpure)
+                    @include box-shadow(inset 0 -8px 0 0 $darckpurpure)
             .blue
-                background: $blue
+                // background: $blue
+                border-right: solid 1px $bluesky
+                @include box-shadow(inset 0 -8px 0 0 $bluesky)
                 &:hover
-                    @include box-shadow(inset 0 -7px 0 0 $darckblue2)
+                    @include box-shadow(inset 0 -8px 0 0 $darckblue2)
             .green
-                background: $green
+                // background: $green
+                border-right: solid 1px $green
+                @include box-shadow(inset 0 -8px 0 0 $green)
                 &:hover
-                    @include box-shadow(inset 0 -7px 0 0 $darckgreen)
+                    @include box-shadow(inset 0 -8px 0 0 $darckgreen)
             .salmon
-                background: $salmon
+                // background: $salmon
+                @include box-shadow(inset 0 -8px 0 0 $new-salmon)
                 &:hover
-                    @include box-shadow(inset 0 -7px 0 0 $darcksalmon)
+                    @include box-shadow(inset 0 -8px 0 0 $darcksalmon)
 /*SLIDER*/
 .border-purpure
     border-bottom: solid 3px $purpure
