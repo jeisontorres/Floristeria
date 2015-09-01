@@ -19,6 +19,9 @@ $grey: #969696
 $blue: #108c99
 
 $new-salmon: #DE4D63
+$red-light: #CE3636
+$yellow: #F7931E
+$pink: #DE4D63
 
 /*FONTS*/
 @include font-face("asapregular", font-files( "../font/asap-regular.woff", "../font/asap-regular.ttf" ), "../font/asap-regular.eot")
@@ -51,7 +54,9 @@ $new-salmon: #DE4D63
         @include box-shadow(none !important)
         text-decoration: none !important
         // border-color: $grey !important
-        background: none !important
+        // background: none !important
+        border: none !important
+        outline: none !important
     a
         text-decoration: none !important
 
@@ -75,6 +80,8 @@ p
     width: 100%
 .container
     width: 1024px 
+.header-fixed
+    margin-top: 80px
 body
 //     overflow: hidden
 // .GDT0S1WBCS
@@ -86,10 +93,10 @@ body
     font-family: "robotoregular"
 
 header
+    margin-top: -80px
     position: fixed
     z-index: 999
     width: 100%
-
 // HEADER
 .cont-nav-header
     @include box-shadow(0 2px 5px rgba(0, 0, 0, .175))
@@ -111,23 +118,23 @@ header
         .menu-movil
             float: right
             li
-                // padding-right: 15px
-                // height: 80px
                 a
-                    // font-family: "robotoregular"
                     font-size: 16px
                     color: $new-salmon 
                     padding: 30px 15px
-                    // height: 100%
                     &:hover
-                        // border-bottom: solid 2px $white
                         color: white
                         background: $new-salmon
+                        svg
+                            path
+                                fill: white
                 &.active
                     a
                         background: $new-salmon
                         color: white
         .desplegable-cat
+            svg
+                width: 15px
             .dropdown-menu
                 padding: 0px
                 margin-top: -1px
@@ -155,28 +162,30 @@ header
                             background: none !important
 
                     &:hover
-                        // background: rgba(42,186,211,0.56)
                         background: $new-salmon
                         a
                             color: $white !important
-            img
+            svg
                 margin-left: 10px !important
+                &:hover
 
             &.open
                 a
                     color: white
                 .desplagable
                     background: $new-salmon !important
-                    img
+                    svg
                         +rotate(180deg)
+                        path
+                            fill: white
 /*CONTENT-SLIDER*/
 .image
+    @include box-shadow(inset 0 -2px 0 0 $purpure)
     background-image: url(../img/slide2.png)
     background-repeat: no-repeat
     background-position: center
     position: relative
     height: 680px
-    @include box-shadow(inset 0 -2px 0 0 $purpure)
     &:after
         background: $purpure
         position: absolute
@@ -233,7 +242,6 @@ header
                 width: 25%
                 a
                     display: table
-                    color: $white
                     height: 100%
                     width: 100%
                     float: left
@@ -241,11 +249,31 @@ header
                         vertical-align: middle
                         display: table-cell
                         text-align: center
-                        img
-                            padding-left: 15px
+                        // img
+                        //     padding-left: 15px
+                        svg
+                            width: 45px
+                            float: left
+                            margin-left: 20px
                         h6
                             display: inline-block
                             padding: 7px 8px
+                &:nth-child(1)
+                    h6
+                        color: $purpure
+                &:nth-child(2)
+                    h6
+                        color: $darckblue
+                &:nth-child(3)
+                    h6
+                        color: $green
+                        margin-right: 50px
+                &:nth-child(4)
+                    h6
+                        color: $new-salmon
+                        margin-right: 100px 
+
+
 
             .purpure
                 // background: $purpure
@@ -313,56 +341,134 @@ header
         position: absolute
         right: -30px
         top: 45%
-/*SLIDER DOS-SECCIONES*/
-.cont-slide2
-    margin: 50px 0 0 0
-    .cont-slide2-text
-        font-family: "robotolihgt"
-        background: $bluesky
-        padding: 50px 15px
-        height: 600px
-        color: $white
-        h2
-            margin: 0
-        h1
-            margin: 0
-            // background: blue
-            &:nth-child(+2)
-                font-size: 133px
-            &:nth-child(+3)
-                font-size: 142px
-            &:last-child
-                // background: red !important
-                font-size: 103px
-    .section-2
-        background: $salmon
-/* EVENTOS-SECTION */
-.full-color
-    background: $purpure 
-    .cont-info-event
-        display: table
-        height: 100%
-        .info-event
-            text-align: center
-            color: $white
-            // float: left
-            width: 35%
-            display: table-cell
-            vertical-align: middle
-            h1
-                font-family: "robotolihgt"
-        img
-            float: right
-        .bottom
-            padding-top: 25px
-            .bottom-more
-                font-family: "asapregular"
-                border: solid 1px $white
-                background: none
-                font-size: 18px
-                &:hover
-                    background: $white
-                    color: $purpure
+
+/*PRODUCT*/ 
+.section-produt
+    .list-product-home
+        li
+            padding-top: 90px
+            img
+                width: 480px
+            .info-general
+                position: relative
+                .info-product
+                    position: relative
+                    padding-top: 100px
+                    width: 460px
+                    .text-info
+                        background: $red-light
+                        text-align: right
+                        padding: 20px
+                        color: white
+                        h2
+                            margin-top: 0px
+                        p
+                            padding-left: 90px
+                        &:after
+                            background-image: url(../img/flor-text.png)
+                            background-repeat: no-repeat
+                            position: absolute
+                            content: ""
+                            height: 85px
+                            width: 136px
+                            left: 10px
+                            bottom: 0px
+                    &:before
+                        border-bottom: 20px solid $red-light
+                        border-right: 20px solid transparent
+                        border-left: 20px solid transparent
+                        position: absolute
+                        left: -30px
+                        content: ""
+                        bottom: 75px
+                        +rotate(270deg)
+                    &:after
+                        background-image: url(../img/flor-product1.png)
+                        background-repeat: no-repeat
+                        background-size: 64px
+                        position: absolute
+                        content: ""
+                        height: 62px
+                        width: 63px
+                        right: 0px
+                        top: 20px
+                .button-more
+                    position: absolute
+                    bottom: -130px
+                    left: 170px
+                    a
+                        font-family: "robotoregular"
+                        text-align: center
+                        color: $red-light
+                        padding-top: 40px
+                        font-size: 20px
+                        display: block
+                        width: 130px
+                        height: 75px
+                        svg
+                            position: absolute
+                            bottom: -30px
+                            width: 160px 
+                            left: -10px
+                            z-index: -1
+                            path
+                                fill: none
+                                stroke: $red-light
+                                stroke-width: 3px
+                        &:hover
+                            color: white
+                            svg
+                                path
+                                    fill: $red-light
+            .info-left
+                .info-product
+                    .text-info
+                        background: $yellow 
+                        text-align: left
+                        p
+                            padding-right: 90px
+                            padding-left: 0px
+                        &:after
+                            transform: rotate(180deg)
+                            left: 300px
+                            top: 100px
+                    &:after
+                        left: 0
+                        background-image: url(../img/flor-product2.png)
+                    &:before
+                        left: 450px
+                        transform: rotate(450deg)
+                        border-bottom: 20px solid $yellow
+                .button-more
+                    a
+                        color: $yellow
+                        svg
+                            path
+                                stroke: $yellow
+                        &:hover
+                            svg
+                                path
+                                    fill: $yellow
+            .info-right-pink
+                .info-product
+                    .text-info
+                        background: $pink
+                    &:after
+                        background-image: url(../img/flor-product3.png)
+                    &:before
+                        border-bottom: 20px solid $pink
+                .button-more
+                    a
+                        color: $pink
+                        svg
+                            path
+                                stroke: $pink
+                        &:hover
+                            svg
+                                path
+                                    fill: $pink
+                            
+
 /* OUR-CLIENTS*/ 
 .our-clients
     h4
@@ -413,44 +519,44 @@ header
                     top: 0
 
 /*BOTTOM-NAV*/
-.full-color-2
-    position: relative
-    margin: 50px 0
-    &:before
-        @include background-image(linear-gradient(left, rgba(147,39,143,1) 0%,rgba(41,171,226,1) 100%))
-        position: absolute
-        height: 100%
-        opacity: 0.9
-        content: ""
-        width: 100%
-        left: 0
-        top: 0
-    &:after
-        @include background-image(linear-gradient(left, rgba(147,39,143,1) 0%,rgba(241,90,36,1) 100%))
-        position: absolute
-        opacity: 0.9
-        height: 100%
-        width: 100%
-        content: ""
-        left: 0
-        top: 0
-    .bottom-nav
-        position: relative
-        margin: 0px
-        width: 100%
-        z-index: 2
-        li
-            text-align: center
-            padding: 50px 0
-            float: left
-            width: 25%
-            a
-                display: block
-                color: $white
-                height: 100%
-                width: 100%
-                h6
-                    padding-top: 10px
+// .full-color-2
+//     position: relative
+//     margin: 50px 0
+//     &:before
+//         @include background-image(linear-gradient(left, rgba(147,39,143,1) 0%,rgba(41,171,226,1) 100%))
+//         position: absolute
+//         height: 100%
+//         opacity: 0.9
+//         content: ""
+//         width: 100%
+//         left: 0
+//         top: 0
+//     &:after
+//         @include background-image(linear-gradient(left, rgba(147,39,143,1) 0%,rgba(241,90,36,1) 100%))
+//         position: absolute
+//         opacity: 0.9
+//         height: 100%
+//         width: 100%
+//         content: ""
+//         left: 0
+//         top: 0
+//     .bottom-nav
+//         position: relative
+//         margin: 0px
+//         width: 100%
+//         z-index: 2
+//         li
+//             text-align: center
+//             padding: 50px 0
+//             float: left
+//             width: 25%
+//             a
+//                 display: block
+//                 color: $white
+//                 height: 100%
+//                 width: 100%
+//                 h6
+//                     padding-top: 10px
 
 /*PAG-CATEGORY*/
 .category
@@ -667,50 +773,7 @@ header
             &:hover
                 background-color: $darcksalmon
 
-    
-
-
-    
-
 /*  FOOTER: */
-footer
-    background: $purpure
-    color: $white
-    @include box-shadow(inset -490px 0px 0px 0px $darckblue)
-    .footer-text
-        font-family: "robotolihgt" 
-        display: inline-block
-    .footer-left
-        width: 50%
-        padding: 20px 
-        .footer-text-left-right
-            font-family: "robotolihgt"
-        .footer-text-left
-            padding: 15px 15px 0 0
-            h4
-                margin: 0px
-            h1
-                margin: 0px
-        .footer-text-right
-            border-left: solid 1px $white
-            padding-left: 15px
-            h1
-                margin: 0px
-            h3
-                margin: 0px
-    .footer-right
-        background: $darckblue
-        padding: 20px
-        width: 50%
-        position: relative
-        // &:after
-        //     content: ""
-        //     position: absolute
-        //     right: 0
-        //     width: 100px
-        //     height: 100%
-        //     background: red
-        //     top: 0
 
     /* MEDIA QUERIES */
 
@@ -765,6 +828,7 @@ footer
                         padding: 0px 
                         a
                             color: $white !important
+        
 @media (max-width: 370px)
     .cont-nav-header
         .cont-buttom
