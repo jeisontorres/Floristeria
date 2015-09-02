@@ -2,8 +2,8 @@
 // @import "compass"
  
 /* COLORES */ 
-$darckpurpure: #5a2282
-$darcksalmon: #a01533
+$darckpurpure: #601155
+$darcksalmon: #BA3E56
 $darckgreen: #5a7c1a
 $darckblue2: #0d7070
 $color-text: #636363
@@ -252,15 +252,18 @@ header
                         // img
                         //     padding-left: 15px
                         svg
+                            margin-left: 20px
                             width: 45px
                             float: left
-                            margin-left: 20px
                         h6
                             display: inline-block
                             padding: 7px 8px
                 &:nth-child(1)
                     h6
                         color: $purpure
+                    svg
+                        path
+                            fill: $purpure        
                 &:nth-child(2)
                     h6
                         color: $darckblue
@@ -298,38 +301,115 @@ header
                 @include box-shadow(inset 0 -8px 0 0 $new-salmon)
                 &:hover
                     @include box-shadow(inset 0 -8px 0 0 $darcksalmon)
-/*SLIDER*/
-.border-purpure
-    border-bottom: solid 3px $purpure
-.slide-cont
-    .info-slide
-        width: 50%
-    .cont-left
-        height: 200px 
-        h5
-            padding: 21px 0 0 14px
-            padding-left: 15px
-            color: $darckblue2
-            text-align: center
-            width: 100%
-            float: left
-        .img-parrafo
-            padding-left: 20px
-            margin: 0 auto
-            float: left
-            width: 100%
-            a
-                float: left
-                img
+/*SLIDER-BOTTOM*/
+.slide-bottom
+    padding-bottom: 50px
+    h3
+        text-align: left
+        font-weight: 800
+        padding: 0px 0px 50px 0px
+        color: #DE4D63
+
+    .height-slide
+        height: 500px
+
+        .slide-cont
+            margin-top: 140px
+            .info-slide
+                width: 50%
+            .cont-left
+                height: 200px
+                position: relative
+                .fondo-text
+                    position: absolute
+                    padding: 10px
+                    width: 200px
+                    height: 122px
+                    top: -140px
+                    right: 20%
+                    display: table
+                    &.text-1
+                        background-color: $pink
+                    &.text-2
+                        background-color: $yellow
+                        h2
+                            font-size: 52px !important
+                        span
+                            border-left: solid 2px white
+                            padding-left: 7px
+                            font-size: 40px
+                    &.text-3
+                        background-color: $red-light
+                    &.text-4 
+                        background-color: $purpure
+                    h2
+                        // padding: 21px 0 0 14px
+                        // padding-left: 15px
+                        text-align: center
+                        position: relative
+                        color: white
+                        margin: 0 
+                        display: table-cell
+                        vertical-align: middle
+                        &.tit-1
+                            &:before
+                                border-bottom: 20px solid $pink
+                                border-right: 20px solid transparent
+                                border-left: 20px solid transparent
+                                position: absolute
+                                left: 10px
+                                content: ""
+                                bottom: -30px
+                                +rotate(180deg)
+                        &.tit-2
+                            &:before
+                                border-bottom: 20px solid $yellow
+                                border-right: 20px solid transparent
+                                border-left: 20px solid transparent
+                                position: absolute
+                                left: 10px
+                                content: ""
+                                bottom: -30px
+                                +rotate(180deg)
+                        &.tit-3
+                            &:before
+                                border-bottom: 20px solid $red-light
+                                border-right: 20px solid transparent
+                                border-left: 20px solid transparent
+                                position: absolute
+                                left: 10px
+                                content: ""
+                                bottom: -30px
+                                +rotate(180deg)
+                        &.tit-4
+                            &:before
+                                border-bottom: 20px solid $purpure
+                                border-right: 20px solid transparent
+                                border-left: 20px solid transparent
+                                position: absolute
+                                left: 10px
+                                content: ""
+                                bottom: -30px
+                                +rotate(180deg)
+
+                .img-parrafo
+                    padding-left: 20px
+                    margin: 0 auto
                     float: left
-                    border-radius: 50%
-                p
-                    padding: 21px 0 0 15px
-                    color: $color-text
-                    max-width: 300px
-                    text-align: left
-                    width: 300px
-                    float: left
+                    width: 100%
+                    a
+                        float: left
+                        img
+                            float: left
+                            height: 370px
+                            // border-radius: 50%
+                        p
+                            padding: 21px 0 0 15px
+                            color: $color-text
+                            max-width: 300px
+                            text-align: left
+                            width: 300px
+                            float: left
 .control-gen
     background: none !important
     // position: relative !important
@@ -342,13 +422,14 @@ header
         right: -30px
         top: 45%
 
-/*PRODUCT*/ 
+/*PRODUCT-HOME*/ 
 .section-produt
+    padding-bottom: 50px
     .list-product-home
         li
             padding-top: 90px
             img
-                width: 480px
+                width: 470px
             .info-general
                 position: relative
                 .info-product
@@ -471,10 +552,12 @@ header
 
 /* OUR-CLIENTS*/ 
 .our-clients
-    h4
-        text-align: center
-        color: $bluesky
+    padding-bottom: 50px
+    h3
+        text-align: left
         padding: 50px 0
+        color: $pink
+        font-weight: 800
     ul
         li
             // margin-left: 40px
@@ -497,26 +580,26 @@ header
                 padding-top: 15px
                 position: relative
                 &:before
-                    background-image: url(../img/comillas.png)
+                    background-image: url(../img/comillas-right.png)
                     background-repeat: no-repeat
                     position: absolute
-                    +rotate(180deg)
-                    opacity: 0.6
+                    // +rotate(180deg)
+                    // opacity: 0.6
                     height: 22px
                     width: 25px
                     content: ""
                     right: 0
-                    top: 0
+                    top: -8px
                 &:after
                     background-image: url(../img/comillas.png)
                     background-repeat: no-repeat
                     position: absolute
                     height: 22px
-                    opacity: 0.6
+                    // opacity: 0.6
                     width: 25px
                     content: ""
                     left: 0
-                    top: 0
+                    top: -8px
 
 /*BOTTOM-NAV*/
 // .full-color-2
@@ -774,6 +857,25 @@ header
                 background-color: $darcksalmon
 
 /*  FOOTER: */
+footer
+    background: $pink
+    .cont-footer
+        // display: table
+        // height: 100%
+        position: relative
+        .info-footer
+            padding: 50px 0
+            color: white
+            img
+                padding-bottom: 20px
+        .icon-social
+            position: absolute
+            bottom: 130px
+            left: 180px
+            a
+                display: inline-block
+                &:first-child
+                    margin-right: 500px 
 
     /* MEDIA QUERIES */
 
