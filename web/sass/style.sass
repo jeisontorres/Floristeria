@@ -1,4 +1,4 @@
-@import "compass/css3"   
+@import "compass/css3"
 // @import "compass"
  
 /* COLORES */ 
@@ -14,7 +14,7 @@ $purpure: #9A1D78
 $salmon: #db233a
 $orange: #DD5B22
 $white: #ffffff
-$green: #6c9925
+$green: #8FBC20
 $grey: #969696
 $blue: #108c99
 
@@ -661,9 +661,15 @@ header
                     width: 25%
                     &:last-child
                         border: none
+                    &:first-child
+                        a
+                            svg
+                                path
+                                    fill: $purpure
                     a
                         padding: 10px 10px
                         position: relative
+                        background: none 
                         .arreglos
                             top: 16px
                         svg
@@ -674,9 +680,6 @@ header
                             display: inline-block
                             color: $color-text
                             padding-right: 20px
-                            // width: 85px
-                        &:hover
-                            background: none !important
                             h6
                                 color: $white
                             svg
@@ -697,8 +700,13 @@ header
                         svg
                             path
                                 fill: $white !important
-                                // background: red
-
+                    &:hover
+                        a
+                            h6
+                                color: $white
+                            svg
+                                path
+                                    fill: $white !important 
                     &:nth-child(0n+1)
                         &:hover
                             background: $purpure
@@ -706,9 +714,9 @@ header
                             background: $purpure
                     &:nth-child(0n+2)
                         &:hover
-                            background: $blue
+                            background: $bluesky
                         &.active
-                            background: $blue
+                            background: $bluesky
                     &:nth-child(0n+3)
                         &:hover
                             background: $green
@@ -721,14 +729,12 @@ header
                         &.active
                             background: $salmon
         .cont-right
-            // background: yellowgreen
             // padding-left: 50px
-            // float: left
+            float: left
             .tab-content
                 .section-event
-                    // text-align: center
+                    text-align: center
                     color: $color-text
-                    h3
                     p
                         margin: 0 auto
                         width: 80%
@@ -743,7 +749,6 @@ header
                             &.active
                                 a
                                     @include box-shadow(inset 0px -3px 0px 0px $purpure !important)
-                                    // border: 0px
                             a
                                 border: 0px !important
                                 padding-bottom: 5px
@@ -768,57 +773,97 @@ header
                         height:  400px
 /*LIST-PRODUCT*/
 .cont-product
+    padding-top: 80px
     .list-product
-        background: yellowgreen
         margin: 0 
+        &.flores
+            li
+                border: solid 1px $green
+                &:before
+                    border-bottom: 20px solid $green
+                .price-product
+                    border-top: solid 1px $green
+                .shop-detail
+                    background-color: $green
+        &.cajas
+            li
+                border: solid 1px $salmon
+                &:before
+                    border-bottom: 20px solid $salmon
+                .price-product
+                    border-top: solid 1px $salmon
+                .shop-detail
+                    background-color: $salmon
         li
-            border-right: solid 1px $light-grey
-            border-bottom: solid 1px $light-grey
-            padding: 80px 0 15px 0
+            border: solid 1px $bluesky
+            margin: 0px 40px 50px 0px
+            padding: 40px 0 15px 0
             text-align: center
             position: relative
-            overflow: hidden
             height: 460px
-            width: 33.3%
+            width: 30.4%
             float: left
             &:nth-child(3n+3)
-                border-right: none
-            .price-product
+                margin-right: 0px
+            &:before
+                border-right: 20px solid transparent
+                border-left: 20px solid transparent
+                border-bottom: 20px solid $bluesky
                 position: absolute
+                +rotate(180deg)
+                bottom: -21px
+                left: 35px
+                content: ""
+            &:after
+                border-right: 19px solid transparent
+                border-left: 19px solid transparent
+                border-bottom: 19px solid $white
+                position: absolute
+                +rotate(180deg)
+                bottom: -19px
+                left: 36px
+                content: ""
+            .cont-img-product
+                position: relative
+                overflow: hidden
+            .price-product
+                border-top: solid 1px $bluesky
                 width: 100%
-                bottom: 5px
+                padding: 10px
                 h6
                     margin: 10px 0 5px 0
                     &:first-child
-                        font-weight: 600
+                        // font-weight: 600
+                        color: $green
             .shop-detail
-                background-color: $blue
+                background-color: $bluesky
                 position: absolute
-                bottom: 70px
+                bottom: -78px
                 opacity: 0.8
                 width: 100%
-                left: 310px
+                left: 0px
                 a
                     padding: 8px 0 0 0
                     color: $white
                     float: left
                     width: 50%
+                    h6
+                        font-family: "robotolihgt"
                     &:last-child
-                        border-left: 1px solid $white
+                        @include box-shadow(inset 1px 0px 0px 0px $white)
             &:hover
                 .shop-detail
-                    left: 0px
+                    bottom: 0px
             &.agotado
-
                 .price-product
                     h6
-                        &:last-child
+                        &:first-child
                             color: $orange
                             font-weight: 600
 /*DETAIL-PRODUCT*/
 .cont-detail
-    padding: 80px 0
-
+    padding: 80px 0 110px
+    float: left
     .detail-img
         width: 50%
         img
@@ -843,7 +888,7 @@ header
             &:first-child
                 border: none !important
     .bottom-detail
-        background-color: $salmon
+        background-color: $pink
         border-top: 4px solid $white
         .bottom-shop
             background-color: transparent
@@ -855,16 +900,129 @@ header
             width: 100%
             &:hover
                 background-color: $darcksalmon
+.recommended
+    float: left
+    width: 100%
+    h3
+        padding: 20px 0 50px 0
+        position: relative
+        color: $pink
+        &:after
+            position: absolute
+            background: $pink
+            width: 630px
+            bottom: 65px
+            height: 1px
+            right: 0px
+            content: ""
+    .slide-detail
+        padding: 50px 0
 
-/*  FOOTER: */
+/*FORMULARIO*/
+.form-contact
+    // background: yellowgreen
+    padding: 20px 0
+    .form-date
+        h4
+            padding-bottom: 20px
+            color: $color-text
+        .form-group
+            width: 100%
+            padding-bottom: 10px
+            input
+                // background: blue
+                padding: 20px 10px
+                box-shadow: none
+                border: none
+                border-bottom: solid 1px $grey
+                width: 100%
+                border-radius: 0px
+                &:focus
+                    border-bottom: solid 1px $grey !important
+    .coment
+        padding: 50px 10px 20px 10px
+        textarea
+            resize: none
+            height: 170px
+            border: none
+            box-shadow: none
+            border-left: solid 1px $grey
+            border-bottom: solid 1px $grey
+            width: 100%
+            &:focus
+                border-bottom: solid 1px $grey !important
+                border-left: solid 1px $grey !important
+        .button-sen-massage
+            padding-top: 95px
+            .send-message
+                background-color: white !important
+                h6 
+                    border: none !important
+                    color: $new-salmon
+                    position: relative
+                    &:after
+                        background-image: url(../img/message.png)
+                        background-repeat: no-repeat
+                        position: absolute
+                        content: ""
+                        height: 85px
+                        width: 100%
+                        left: 28px
+                        bottom: 0px
+.user-messge
+    padding-bottom: 30px
+    h4
+        padding-bottom: 20px
+        color: $color-text
+        margin: 0 auto
+        position: relative
+        &:first-child
+            width: 80%
+            &:after
+                background: $red-light
+                position: absolute
+                width: 500px
+                content: ""
+                height: 5px
+                bottom: 0
+                left: 120px
+    .contact
+        padding: 50px
+        width: 600px
+        // height: 300px
+        margin: 0 auto
+        .text-contact
+            padding: 15px
+            background: $bluesky
+            position: relative
+            &:before
+                border-bottom: 25px solid $bluesky
+                border-right: 25px solid transparent
+                border-left: 25px solid transparent
+                position: absolute
+                left: 60px
+                content: ""
+                bottom: -25px
+                +rotate(180deg)
+            .border-dashed
+                border-style: dashed
+                border-color: $white
+                padding: 15px
+                h1
+                    color: $white
+                    margin-top: 0px
+                h4
+                    color: $white
+                    padding: 5px
+
+    
+/*FOOTER:*/
 footer
     background: $pink
     .cont-footer
-        // display: table
-        // height: 100%
         position: relative
         .info-footer
-            padding: 50px 0
+            padding: 20px 0
             color: white
             img
                 padding-bottom: 20px
