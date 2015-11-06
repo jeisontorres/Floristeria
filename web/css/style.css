@@ -2,8 +2,8 @@
 /*FONTS */
 @font-face {
   font-family: "asapregular";
-  src: url('../fonts/../font/asap-regular.eot?1434468862');
-  src: url('../fonts/../font/asap-regular.eot?&1434468862#iefix') format('embedded-opentype'), url('../fonts/../font/asap-regular.woff?1434468860') format('woff'), url('../fonts/../font/asap-regular.ttf?1434468862') format('truetype');
+  src: url('../fonts/../font/asap-regular.eot');
+  src: url('../fonts/../font/asap-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/../font/asap-regular.woff') format('woff'), url('../fonts/../font/asap-regular.ttf') format('truetype');
 }
 @font-face {
   font-family: "asaplight";
@@ -12,38 +12,38 @@
 }
 @font-face {
   font-family: "asapbold";
-  src: url('../fonts/../font/asap-bold.eot?1434468860');
-  src: url('../fonts/../font/asap-bold.eot?&1434468860#iefix') format('embedded-opentype'), url('../fonts/../font/asap-bold.woff?1434468860') format('woff'), url('../fonts/../font/asap-bold.ttf?1434468860') format('truetype');
+  src: url('../fonts/../font/asap-bold.eot');
+  src: url('../fonts/../font/asap-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/../font/asap-bold.woff') format('woff'), url('../fonts/../font/asap-bold.ttf') format('truetype');
 }
 @font-face {
   font-family: "robotolihgt";
-  src: url('../fonts/../font/roboto-light.eot?1430327512');
-  src: url('../fonts/../font/roboto-light.eot?&1430327512#iefix') format('embedded-opentype'), url('../fonts/../font/roboto-light.woff?1430327512') format('woff'), url('../fonts/../font/roboto-light.ttf?1430327512') format('truetype');
+  src: url('../fonts/../font/roboto-light.eot');
+  src: url('../fonts/../font/roboto-light.eot?#iefix') format('embedded-opentype'), url('../fonts/../font/roboto-light.woff') format('woff'), url('../fonts/../font/roboto-light.ttf') format('truetype');
 }
 @font-face {
   font-family: "robotoregular";
-  src: url('../fonts/../font/roboto-regular.eot?1430327512');
-  src: url('../fonts/../font/roboto-regular.eot?&1430327512#iefix') format('embedded-opentype'), url('../fonts/../font/roboto-regular.woff?1430327512') format('woff'), url('../fonts/../font/roboto-regular.ttf?1430327512') format('truetype');
+  src: url('../fonts/../font/roboto-regular.eot');
+  src: url('../fonts/../font/roboto-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/../font/roboto-regular.woff') format('woff'), url('../fonts/../font/roboto-regular.ttf') format('truetype');
 }
 @font-face {
   font-family: "harabara";
-  src: url('../fonts/../font/harabara.eot?1441038981');
-  src: url('../fonts/../font/harabara.eot?&1441038981#iefix') format('embedded-opentype'), url('../fonts/../font/harabara.woff?1441038981') format('woff'), url('../fonts/../font/harabara.ttf?1441038981') format('truetype');
+  src: url('../fonts/../font/harabara.eot');
+  src: url('../fonts/../font/harabara.eot?#iefix') format('embedded-opentype'), url('../fonts/../font/harabara.woff') format('woff'), url('../fonts/../font/harabara.ttf') format('truetype');
 }
 @font-face {
   font-family: "opensans-regular";
-  src: url('../fonts/../font/opensans/opensans-regular.eot?1441039324');
-  src: url('../fonts/../font/opensans/opensans-regular.eot?&1441039324#iefix') format('embedded-opentype'), url('../fonts/../font/opensans/opensans-regular.woff?1441039324') format('woff'), url('../fonts/../font/opensans/opensans-regular.ttf?1441039324') format('truetype');
+  src: url('../fonts/../font/opensans/opensans-regular.eot');
+  src: url('../fonts/../font/opensans/opensans-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/../font/opensans/opensans-regular.woff') format('woff'), url('../fonts/../font/opensans/opensans-regular.ttf') format('truetype');
 }
 @font-face {
   font-family: "opensans-bold";
-  src: url('../fonts/../font/opensans/opensans-bold.eot?1441039324');
-  src: url('../fonts/../font/opensans/opensans-bold.eot?&1441039324#iefix') format('embedded-opentype'), url('../fonts/../font/opensans/opensans-bold.woff?1441039324') format('woff'), url('../fonts/../font/opensans/opensans-bold.ttf?1441039324') format('truetype');
+  src: url('../fonts/../font/opensans/opensans-bold.eot');
+  src: url('../fonts/../font/opensans/opensans-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/../font/opensans/opensans-bold.woff') format('woff'), url('../fonts/../font/opensans/opensans-bold.ttf') format('truetype');
 }
 @font-face {
   font-family: "opensans-light";
-  src: url('../fonts/../font/opensans/opensans-light.eot?1441039324');
-  src: url('../fonts/../font/opensans/opensans-light.eot?&1441039324#iefix') format('embedded-opentype'), url('../fonts/../font/opensans/opensans-light.woff?1441039324') format('woff'), url('../fonts/../font/opensans/opensans-light.ttf?1441039324') format('truetype');
+  src: url('../fonts/../font/opensans/opensans-light.eot');
+  src: url('../fonts/../font/opensans/opensans-light.eot?#iefix') format('embedded-opentype'), url('../fonts/../font/opensans/opensans-light.woff') format('woff'), url('../fonts/../font/opensans/opensans-light.ttf') format('truetype');
 }
 /*MIXIN */
 /* GENERAL ELEMENTS */
@@ -224,11 +224,12 @@ header {
 
 /*CONTENT-SLIDER */
 .image {
-  background-image: url(../img/slide2.png);
+  background-image: url(../img/fondo-home.jpg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
+  background-size: cover;
   position: relative;
-  height: 680px;
+  height: 474px;
 }
 .image:after {
   background: #DE4D63;
@@ -250,24 +251,40 @@ header {
   width: 50%;
   right: 0;
 }
+.image .textura {
+  background-image: url(../img/textura.png);
+  background-position: center;
+  background-repeat: repeat;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
 .image .text-slide {
   position: relative;
+  z-index: 2;
 }
 .image .text-slide .transfor-skew {
-  background-image: url(../img/petalo-fondo.png);
+  background-image: url(../img/lettering.png);
   position: absolute;
-  height: 247px;
+  height: 265px;
+  opacity: 0.9;
   width: 397px;
-  top: 200px;
+  z-index: 2;
+  top: 90px;
   left: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .image .text-slide .text-promo {
   position: absolute;
   padding: 20px;
   color: #ffffff;
+  display: none;
   width: 500px;
-  top: 220px;
+  top: 111px;
   left: 82px;
+  z-index: 3;
 }
 .image .text-slide .text-promo h3 {
   margin: 0px;
@@ -700,26 +717,6 @@ header {
   padding-top: 15px;
   position: relative;
 }
-.our-clients ul li p:before {
-  background-image: url(../img/comillas-right.png);
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 22px;
-  width: 25px;
-  content: "";
-  right: 0;
-  top: -8px;
-}
-.our-clients ul li p:after {
-  background-image: url(../img/comillas.png);
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 22px;
-  width: 25px;
-  content: "";
-  left: 0;
-  top: -8px;
-}
 
 /*BOTTOM-NAV */
 /*PAG-CATEGORY */
@@ -833,6 +830,7 @@ header {
   width: 80%;
 }
 .category .cont-row .cont-right .tab-content .section-event .cont-aviso {
+  padding: 40px 0;
   width: 920px;
 }
 .category .cont-row .cont-right .tab-content .cont-nav-event {
