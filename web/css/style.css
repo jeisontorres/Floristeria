@@ -153,9 +153,12 @@ header {
 .cont-nav-header .cont-list .menu-movil li a:hover svg path {
   fill: white;
 }
-.cont-nav-header .cont-list .menu-movil li.active a {
+.cont-nav-header .cont-list .menu-movil li.active > a {
   background: #DE4D63;
   color: white;
+}
+.cont-nav-header .cont-list .menu-movil li.active > a svg path {
+  fill: white;
 }
 .cont-nav-header .cont-list .desplegable-cat svg {
   width: 15px;
@@ -692,9 +695,10 @@ header {
   font-weight: 800;
 }
 .our-clients ul li {
+  border: solid 1px #969696;
   text-align: center;
   padding: 25px 10px;
-  border: solid 1px #969696;
+  height: 270px;
 }
 .our-clients ul li:nth-child(1n+4) {
   margin-top: 50px;
@@ -718,7 +722,6 @@ header {
   position: relative;
 }
 
-/*BOTTOM-NAV */
 /*PAG-CATEGORY */
 .category {
   padding: 50px 0;
@@ -738,10 +741,11 @@ header {
   text-align: center;
   position: relative;
   float: left;
-  width: 25%;
+  width: 20%;
 }
 .category .cont-row .cont-left .nav-category li:last-child {
   border: none;
+  float: right;
 }
 .category .cont-row .cont-left .nav-category li:first-child a svg path {
   fill: #9A1D78;
@@ -817,6 +821,12 @@ header {
 }
 .category .cont-row .cont-left .nav-category li:nth-child(0n+4).active {
   background: #db233a;
+}
+.category .cont-row .cont-left .nav-category li:nth-child(0n+5):hover {
+  background: #F7931E;
+}
+.category .cont-row .cont-left .nav-category li:nth-child(0n+5).active {
+  background: #F7931E;
 }
 .category .cont-row .cont-right {
   float: left;
@@ -911,13 +921,27 @@ header {
 .cont-product .list-product.cajas li .shop-detail {
   background-color: #db233a;
 }
+.cont-product .list-product.condolencia li {
+  border: solid 1px #F7931E;
+}
+.cont-product .list-product.condolencia li .cont-img-product > img {
+  background: red;
+}
+.cont-product .list-product.condolencia li:before {
+  border-bottom: 20px solid #F7931E;
+}
+.cont-product .list-product.condolencia li .price-product {
+  border-top: solid 1px #F7931E;
+}
+.cont-product .list-product.condolencia li .shop-detail {
+  background-color: #F7931E;
+}
 .cont-product .list-product li {
   border: solid 1px #05c6e5;
   margin: 0px 40px 50px 0px;
-  padding: 40px 0 15px 0;
   text-align: center;
   position: relative;
-  height: 460px;
+  height: 420px;
   width: 30.4%;
   float: left;
 }
@@ -953,16 +977,20 @@ header {
 .cont-product .list-product li .cont-img-product {
   position: relative;
   overflow: hidden;
+  height: 300px;
+}
+.cont-product .list-product li .cont-img-product > img {
+  width: 100%;
 }
 .cont-product .list-product li .price-product {
   border-top: solid 1px #05c6e5;
-  width: 100%;
   padding: 10px;
+  width: 100%;
 }
-.cont-product .list-product li .price-product h6 {
+.cont-product .list-product li .price-product h6, .cont-product .list-product li .price-product h5 {
   margin: 10px 0 5px 0;
 }
-.cont-product .list-product li .price-product h6:first-child {
+.cont-product .list-product li .price-product h6:first-child, .cont-product .list-product li .price-product h5:first-child {
   color: #8FBC20;
 }
 .cont-product .list-product li .shop-detail {
@@ -990,7 +1018,7 @@ header {
 .cont-product .list-product li:hover .shop-detail {
   bottom: 0px;
 }
-.cont-product .list-product li.agotado .price-product h6:first-child {
+.cont-product .list-product li.agotado .price-product h5:first-child {
   color: #DD5B22;
   font-weight: 600;
 }
@@ -1173,7 +1201,6 @@ header {
   transform: rotate(180deg);
 }
 .user-messge .contact .text-contact .border-dashed {
-  border-style: dashed;
   border-color: #ffffff;
   padding: 15px;
 }
